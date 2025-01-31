@@ -58,4 +58,4 @@ export const dgrey = '#999797';
 export const white = '#DDE6EB';
 export const guiblack = '#000000';
 export const paletteSize = 10;
-let color = {}; // zamiast const
+let color = {};
