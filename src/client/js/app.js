@@ -490,7 +490,7 @@ global.time = 0;
 
 // Window setup <3
 global.mobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent);
-var serverName = 'Prob Not Fixed Server';
+var serverName = 'Unknown Server';
 window.onload = () => {
     // Server name stuff
     switch (window.location.hostname) {
