@@ -4,7 +4,6 @@
 "use strict";
 
 export const constants = {
-    // Klawisze i inne sta³e
     KEY_ESC: 27,
     KEY_ENTER: 13,
     KEY_CHAT: 13,
@@ -46,7 +45,6 @@ export const constants = {
     KEY_FUCK_YOU: 191,
 };
 
-// Globalne zmienne do przechowywania stanu gry
 export const globalState = {
     screenWidth: window.innerWidth,
     screenHeight: window.innerHeight,
@@ -63,7 +61,7 @@ export const globalState = {
     toggleMassState: 0,
     backgroundColor: '#f2fbff',
     lineColor: '#000000',
-    target: {},  // Dodajemy domyœlny obiekt target
-    canvas: null,  // Przechowywanie instancji canvas
-    socket: null,  // Dodajemy socket do globalState
+    target: {},
+    canvas: null,
+    socket: null, 
 };
