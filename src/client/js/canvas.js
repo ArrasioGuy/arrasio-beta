@@ -2,11 +2,11 @@ import * as global from './lib/global.js';
 
 export default class Canvas {
     constructor(params) {
-        console.log('params', params); // Sprawdzamy, co jest przekazywane
+        console.log('params', params);
         this.directionLock = false;
-        this.target = global.globalState.target || {};  // Dostêp do target w globalState
+        this.target = global.globalState.target || {}; 
         this.reenviar = true;
-        this.socket = global.globalState.socket;  // Korzystamy z socket w globalState
+        this.socket = global.globalState.socket;
         this.directions = [];
         var self = this;
 
@@ -20,7 +20,7 @@ export default class Canvas {
         this.cv.addEventListener("mouseup", this.mouseUp, false);
         this.cv.parent = self;
 
-        // Sprawdzamy, czy 'parent' jest przekazywane
+     
         if (params && params.parent) {
             this.parent = params.parent;
         } else {
@@ -29,7 +29,7 @@ export default class Canvas {
 
         console.log('params', params);
 
-        global.globalState.canvas = this;  // Przypisujemy canvas do globalState
+        global.globalState.canvas = this;
     }
 
     keyboardDown(event) {
