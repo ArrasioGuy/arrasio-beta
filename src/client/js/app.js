@@ -5,10 +5,10 @@
 // Fundamental requires <3
 import { constants } from './lib/global.js';
 import * as util from './lib/util.js'
-import Smoothbar from './lib/smoothbar.js';  // Import domyślny
-import Canvas from './canvas.js'; // Dodaj import wcześniej
+import Smoothbar from './lib/smoothbar.js';
+import Canvas from './canvas.js';
 import * as color from './lib/color.js';
-console.log(Smoothbar);  // Dodaj log, aby sprawdzić, czy Smoothbar jest zaimportowana
+console.log(Smoothbar);
 // Get color
 var config = {
     graphical: {
@@ -150,7 +150,7 @@ function getEntityImageFromMockup(index, color = mockups[index].color) {
 }
 
 const global = {
-    ...constants, // kopiowanie wartości z modułu global.js
+    ...constants,
     clickables: (() => {
         let Region = (() => {
             function Clickable() {
@@ -524,27 +524,20 @@ window.onload = () => {
     };
     // Resizing stuff
     window.addEventListener('resize', () => {
-        // Sprawdzamy, czy 'c' i 'global.screenWidth' są zainicjalizowane
         if (global.globalState.canvas && global.globalState.canvas.cv) {
             var c = global.globalState.canvas.cv;
             global.globalState.screenWidth = window.innerWidth;
             global.globalState.screenHeight = window.innerHeight;
-
-            // Ustawiamy nowe rozmiary canvas
             c.width = global.globalState.screenWidth;
             c.height = global.globalState.screenHeight;
-
-            // Jeśli chcesz, możesz też zaktualizować inne elementy, takie jak player
             player.screenWidth = c.width;
             player.screenHeight = c.height;
         } else {
             console.error('Canvas or globalState.canvas.cv is not initialized!');
         }
     });
-
-    // Tworzymy instancję Canvas
     window.onload = () => {
-        if (!global.globalState) global.globalState = {}; // Inicjalizacja, jeśli brak globalState
+        if (!global.globalState) global.globalState = {};
         global.globalState.canvas = new Canvas({ parent: global.globalState });
     };
     var c = global.globalState.canvas.cv;
@@ -588,17 +581,17 @@ window.onload = () => {
     })();
     var getNow = () => { return Date.now() - clockDiff - serverStart; };
     var player = {
-        x: 0,  // Ustawienie domyślnej wartości
+        x: 0, 
         y: 0,
         vx: 0,
         vy: 0,
         lastvx: 0,
         lastvy: 0,
-        renderx: 0, // Teraz poprawnie przypisane
+        renderx: 0,
         rendery: 0,
         lastx: 0,
         lasty: 0,
-        target: window.canvas?.target || { x: 0, y: 0 }, // Użycie operatora ? zapobiega błędom, jeśli canvas nie istnieje
+        target: window.canvas?.target || { x: 0, y: 0 },
         name: '',
         lastUpdate: 0,
         time: 0,
